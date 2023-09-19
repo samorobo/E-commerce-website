@@ -6,18 +6,18 @@ import Link from "next/link";
 import Login from './Login'
 import { useState, useEffect } from 'react'
 
-import { useCart, } from "./CartContext"; // Import useCart hoo
+import { useCart, CartItem} from "./CartContext"; // Import useCart hoo
 
 
 function Header() {
 
   const { cartItems } = useCart();
   const { user, logout } = useAuth();
-  const [clientCartItems, setClientCartItems] = useState([]);
+  // const [clientCartItems, setClientCartItems] = useState<CartItem[]>([]);
   
-  useEffect(() => {
-    setClientCartItems(cartItems);
-  }, [cartItems]);
+  // useEffect(() => {
+  //   setClientCartItems(cartItems);
+  // }, [cartItems]);
 
 
   return (
@@ -59,9 +59,9 @@ function Header() {
             />
           </svg>
         </button>
-        {clientCartItems.length > 0 && ( // Check if cart has items
+        {cartItems.length > 0 && ( // Check if cart has items
           <span className="font-semibold ml-4">
-            Cart ({clientCartItems.reduce((total, item) => total + item.quantity, 0)})
+            Cart ({cartItems.reduce((total, item) => total + item.quantity, 0)})
           </span>
         )}
       </div>

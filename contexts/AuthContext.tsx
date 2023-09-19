@@ -4,8 +4,8 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
 type User = {
-    id: string;
-    email: string;
+    id?: string;
+    email?: string;
     // ...other user properties
   };
 
