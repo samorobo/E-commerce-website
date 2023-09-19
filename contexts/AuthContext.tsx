@@ -1,7 +1,7 @@
 // contexts/AuthContext.tsx
 "use client"
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 
 type User = {
     id: string;
@@ -17,7 +17,10 @@ type AuthContextType = {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider: React.FC = ({ children }) => {
+interface IAuthProviderProps {
+  children: ReactNode
+}
+export const AuthProvider = ({ children }: IAuthProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
 
   const login = (userData: User) => {
