@@ -1,6 +1,7 @@
 import ProductImage from "@/components/ProductImage";
 import { notFound } from "next/navigation";
 
+
 type Props = {
   params: {
     id: string;
@@ -19,7 +20,8 @@ async function ProductPage({ params: { id } }: Props) {
         <div className="divide-y">
           <div className="space-y-2 pb-8">
             <h1 className="text-2xl md:text-4xl font-bold">{product.title}</h1>
-            <h2 className="text-gray-500 font-bold text-xl md:text-3xl">
+            <h2 className="text-gray-500 font-bold te
+            xt-xl md:text-3xl">
               ${product.price}
             </h2>
           </div>
@@ -28,7 +30,7 @@ async function ProductPage({ params: { id } }: Props) {
             <p className="text-xs md:text-sm">{product.description}</p>
           </div>
         </div>
-      </div>
+      </div> 
     );
   } catch (error) {
     notFound();

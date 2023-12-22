@@ -1,4 +1,5 @@
 import Product from "@/components/Product";
+import Modal from "./(.)product/[id]/page";
 
 export default async function Home() {
   const res = await fetch("https://fakestoreapi.com/products");
@@ -14,6 +15,7 @@ export default async function Home() {
           ))}
         </div>
       </section>
+    
     </main>
   );
 }

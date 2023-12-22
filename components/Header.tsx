@@ -38,7 +38,7 @@ function Header() {
         </button>
         </Link>
         <button className="button bg-transparent border-blue-600 hover:bg-blue-600 hover:text-white hover:border-transparent">
-          Sign up
+        Sign up
         </button>
         <div className="relative group">
         <button
